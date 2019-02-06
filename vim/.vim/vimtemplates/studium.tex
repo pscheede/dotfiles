@@ -1,0 +1,71 @@
+% \documentclass[12pt, a4paper, bibliography=totocnumbered, listof=totocnumbered, toc=flat, footnotes=multiple]{scrartcl}
+\documentclass[12pt, a4paper]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage{setspace}
+\usepackage{geometry}
+
+% Biler
+\usepackage{graphicx}
+
+% different font
+\usepackage{lmodern}
+
+% Bilder die von text umflossen werden
+\usepackage{wrapfig}
+
+% Bildunterschrift formatieren
+% \usepackage[]{caption}
+% \captionsetup[figure]{name={Abb.}, font={small}, labelfont=bf, indention=-30pt}
+
+% Deckblatt und Erklärung einfügen
+\usepackage{pdfpages}
+
+% fußnoten bei \autocite{} in \caption{} eines Bildes
+\usepackage{ftnxtra}
+
+% weniger overfull hboxes
+\usepackage{microtype}
+
+% URLs schöner machen
+\usepackage{url}
+
+% Mathe
+\usepackage{amsmath}
+
+% Schöne Einheiten
+\usepackage[locale=DE, per-mode=symbol]{siunitx}
+
+% Bibliographie
+% \usepackage[notes,backend=biber,abbreviate=true,short]{biblatex-chicago}
+% \addbibresource{bibliographie.bib}
+
+% \makeatletter
+% Biblatex spuckt nen Fehler aus wenn das nicht drin ist
+% \def\cms@choose{cms}
+
+% Vermeide Striche bei gleichen Autoren im Lit.verz.
+% \AtEveryBibitem{%
+    % \global\undef\bbx@lasthash%
+    % \clearfield{extrayear}}
+% \makeatother
+
+% Non-Serifenschrift
+\renewcommand{\familydefault}{\sfdefault}
+
+% Fußnotenzeichen hochstellen
+\deffootnote{1em}{1em}{\textsuperscript{\thefootnotemark\ }}
+
+% Ränder
+\geometry{top=2cm,left=2cm,bottom=2.5cm,right=2cm}
+
+% Zeilenabstand 1,5
+% \onehalfspacing{}
+
+\begin{document}
+
+
+
+\end{document}

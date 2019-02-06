@@ -1,0 +1,8 @@
+#! /bin/bash
+
+ps -e | grep firefox
+
+if [ $? -eq 1 ]
+then
+    firefox &
+fi
