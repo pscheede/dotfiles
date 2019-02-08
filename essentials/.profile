@@ -4,8 +4,12 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 # fix "xdg-open fork-bomb" export your preferred browser from here
 export BROWSER=/usr/bin/firefox
 
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+    PATH="$HOME/bin:$PATH"
 fi
 
 export PATH
