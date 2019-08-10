@@ -17,6 +17,7 @@ general {
 order += "cpu_usage"
 # order += "load"
 order += "disk /"
+order += "disk /home"
 order += "arch_updates"
 # order += "disk /home"
 order += "wireless _first_"
@@ -39,6 +40,10 @@ load {
 disk "/" {
         # format = " hdd %avail "
         format = " ⛁ %avail "
+}
+
+disk "/home" {
+        format = " /home %avail "
 }
 
 wireless _first_ {
