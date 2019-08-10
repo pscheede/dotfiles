@@ -168,21 +168,23 @@ nnoremap <leader>p :rv<CR>
 nnoremap j gj
 nnoremap k gk
 
-inoremap ;; <Esc>l
+inoremap ;K ;<Esc>
+inoremap :; <Esc>
+inoremap ;: <Esc>
 
 "search for TODO
 nnoremap <leader>ft /TODO<CR>
 nnoremap <leader>tt 't
 
 "disable Ctrl-A
-nnoremap <c-a> <Nop>
+"nnoremap <c-a> <Nop>
 
 "reload vimrc with re
 nnoremap <leader>re :source $MYVIMRC<CR>
 
 "edit vimrc
-" nnoremap <leader>rc :vsplit $MYVIMRC<CR>
-nnoremap <leader>rc :!terminal -e "vim "$MYVIMRC<CR><CR>
+nnoremap <leader>rc :vsplit $MYVIMRC<CR>
+" nnoremap <leader>rc :!terminal -e "vim"$MYVIMRC<CR><CR>
 
 "load templates
 nnoremap <leader>html :read ~/.vim/vimtemplates/base5.html<CR>gg
@@ -225,6 +227,9 @@ let g:ale_fixers = {
             \],
             \'java': [
             \   'google_java_format',
+            \],
+            \'json': [
+            \   'fixjson',
             \],
             \}
 
