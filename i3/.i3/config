@@ -32,7 +32,7 @@ mode "$mode_system" {
 # }}}
 
 # configure border <normal|pixel xx|none> {{{
-default_border none
+default_border pixel 1
 default_floating_border normal
 
 # Hide borders
@@ -57,7 +57,7 @@ exec --no-startup-id pamac-tray
 # exec --no-startup-id start_conky_custom
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 60 -locker belock -corners 000-
+exec --no-startup-id xautolock -time 60 -locker mylock -corners 000-
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id /home/failipp/git/dotfiles/.xsetwacom.sh
@@ -221,7 +221,7 @@ bindsym $mod+Shift+y focus child
 
 ### ß (ssharp)
  # lock screen
-bindsym $mod+ssharp exec --no-startup-id belock
+bindsym $mod+ssharp exec --no-startup-id mylock
 
 ### ´ (dead_acute / acute)
  # enter into $mode_system to shutdown, supspend, ...
@@ -281,6 +281,13 @@ bindsym Print --release exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
  # select screenshot area
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
+
+### Media Keys
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF68AudioStop exec --no-startup-id playerctl stop
 
 # }}}
 
@@ -614,13 +621,13 @@ bar {
 
 # set inner/outer gaps
 gaps inner 13
-gaps outer 7
+gaps outer -3
 
 # smart gaps (gaps used only if more than one container)
 # smart_gaps on
 
 # smart borders (draw borders for more than one containers)
-smart_borders on
+# smart_borders on
 
 # Syntax for changing gaps
 # gaps inner|outer current|all set|plus|minus <px>
