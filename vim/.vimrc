@@ -123,8 +123,9 @@ augroup END
 augroup filetype_tex
     au!
     autocmd FileType tex setlocal foldmethod=indent foldlevel=10
-    autocmd FileType tex nnoremap <buffer> <localleader>m :w<cr>:!pdflatex --shell-escape %<cr>
-    autocmd FileType tex nnoremap <buffer> <localleader>n :w<cr>:!~/git/dotfiles/vimtemplates/latexcompile.py %<cr>
+    " autocmd FileType tex nnoremap <buffer> <localleader>m :w<cr>:!pdflatex --output-directory ./tex --shell-escape %<cr>
+    autocmd FileType tex nnoremap <buffer> <localleader>m :w<cr>:!~/.vim/vimtemplates/latexcompile.py once %<cr>
+    autocmd FileType tex nnoremap <buffer> <localleader>n :w<cr>:!~/.vim/vimtemplates/latexcompile.py full %<cr>
     autocmd FileType tex inoremap <buffer> ;b \begin{}<esc>i
     autocmd FileType tex inoremap <buffer> ;e \end{}<esc>i
 augroup END
