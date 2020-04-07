@@ -50,6 +50,10 @@ Plugin 'dag/vim-fish'
 " Plugin 'flazz/vim-colorschemes'
 " Plugin 'vim-latex/vim-latex'
 Plugin 'jezeniel/vim-renpy'
+Plugin 'ElmCast/elm-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 
@@ -154,6 +158,8 @@ nnoremap <space> za
 nnoremap <leader>ww :w<CR>
 nnoremap <leader>wa :wa<CR>
 
+nnoremap ZA :xa<CR>
+
 "Make highlighting to go away
 nnoremap <leader>h :nohlsearch<CR> 
 
@@ -245,5 +251,46 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_fist = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#use_splits_not_buffers = 'right'
+
+""" CtrlP fuzzy file finder
+
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" Use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version
+" control. It also supports works with .svn, .hg, .bzr.
+let g:ctrlp_working_path_mode = 'r'
+
+" Use a leader instead of the actual named binding
+nmap <leader>o :CtrlP<cr>
+
+" Easy bindings for its various modes
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
+
+""" Buffergator
+
+" Use the right side of the screen
+let g:buffergator_viewport_split_policy = 'R'
+
+" I want my own keymappings...
+let g:buffergator_suppress_keymaps = 1
+
+" Looper buffers
+"let g:buffergator_mru_cycle_loop = 1
+
+" Go to the previous buffer open
+nmap <leader>jj :BuffergatorMruCyclePrev<cr>
+
+" Go to the next buffer open
+nmap <leader>kk :BuffergatorMruCycleNext<cr>
+
+" View the entire list of buffers open
+nmap <leader>bl :BuffergatorOpen<cr>
 
 " }}}
