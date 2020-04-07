@@ -19,10 +19,6 @@ if [ -n "$DESKTOP_SESSION" ]; then
     export SSH_AUTH_SOCK
 fi
 
-# ESP32
-PATH="/home/failipp/programming/esp/xtensa-esp32-elf/bin:$PATH"
-export IDF_PATH="/home/failipp/programming/esp/esp-idf"
-
 # Neo:                          # Neo Tastaturbelegung
 PATH="/home/failipp/neo/:$PATH"    # Neo Tastaturbelegung
 export PATH                     # Neo Tastaturbelegung
