@@ -46,9 +46,9 @@ Plugin 'sjl/badwolf'
 Plugin 'w0rp/ale'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'dag/vim-fish'
-Plugin 'liuchengxu/space-vim-dark'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-latex/vim-latex'
+" Plugin 'liuchengxu/space-vim-dark'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'vim-latex/vim-latex'
 Plugin 'jezeniel/vim-renpy'
 
 call vundle#end()
@@ -158,7 +158,7 @@ nnoremap <leader>wa :wa<CR>
 nnoremap <leader>h :nohlsearch<CR> 
 
 "Sane way of jumping between panes
-" nnoremap <c-j> <c-w>j
+nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
