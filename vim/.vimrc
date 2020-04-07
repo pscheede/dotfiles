@@ -145,6 +145,15 @@ augroup filetype_java
     autocmd FileType java setlocal expandtab "Tab equals whitespaces
     autocmd FileType java setlocal shiftwidth=2 "Correct indentation when using < >
 augroup END
+
+augroup filetype_cpp
+    au!
+    autocmd FileType cpp setlocal foldmethod=indent foldlevel=20
+    autocmd FileType cpp setlocal tabstop=2 "Tabs are whitespaces
+    autocmd FileType cpp setlocal softtabstop=2 "Tab inputs 2 whitespaces
+    autocmd FileType cpp setlocal expandtab "Tab equals whitespaces
+    autocmd FileType cpp setlocal shiftwidth=2 "Correct indentation when using < >
+augroup END
 " }}}
 
 " Custom mappings {{{
@@ -229,6 +238,8 @@ let g:ale_linters = {
             \}
 
 let g:ale_java_google_java_format_options = '-a'
+let g:ale_c_clangformat_options = '--style=Google'
+
 let g:ale_fixers = {
             \'python': [
             \   'yapf',
@@ -239,6 +250,9 @@ let g:ale_fixers = {
             \],
             \'json': [
             \   'fixjson',
+            \],
+            \'cpp': [
+            \   'clang-format',
             \],
             \}
 
