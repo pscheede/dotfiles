@@ -235,7 +235,15 @@ let g:ale_linters = {
             \   'chktex',
             \   'write-good',
             \],
+            \'python': [
+            \   'pyflakes',
+            \   'flake8',
+            \   'mypy',
+            \],
             \}
+
+let g:ale_python_mypy_options = '--ignore-missing-imports'
+let g:ale_python_mypy_ignore_invalid_syntax = 0
 
 let g:ale_java_google_java_format_options = '-a'
 let g:ale_c_clangformat_options = '--style=Google'
