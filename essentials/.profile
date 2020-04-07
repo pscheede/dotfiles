@@ -28,3 +28,8 @@ PATH="/home/failipp/neo/:$PATH"    # Neo Tastaturbelegung
 export PATH                     # Neo Tastaturbelegung
 echo "DE" > /home/failipp/neo/aktuell.status
 #asdf                           # Neo Tastaturbelegung; mit einem # am Zeilenanfang bleibt QWERTZ das Standardlayout, sonst ist es Neo
+
+# pyenv:
+export PATH="/home/failipp/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
