@@ -14,6 +14,8 @@ set path+=** "Fuzzy file finder
 
 set incsearch "Search during input
 set hlsearch "Highlight search
+set ignorecase "Case insensitive searching
+set scrolloff=5 "7 lines above and below the search result
 
 "correct split behaviour
 set splitright
