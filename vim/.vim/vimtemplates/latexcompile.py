@@ -4,22 +4,22 @@ import os
 import sys
 
 
+def compile(tex_file_name):
+    os.system("xelatex -output-directory=./tex --shell-escape " +
+              tex_file_name)
+
+
 def full(tex_file_name):
     bcf_file_name = tex_file_name[:-3] + "bcf"
-    os.system("pdflatex -output-directory=./tex --shell-escape " +
-              tex_file_name)
-    os.system("pdflatex -output-directory=./tex --shell-escape " +
-              tex_file_name)
+    compile(tex_file_name)
+    compile(tex_file_name)
     os.system("biber " + bcf_file_name)
-    os.system("pdflatex -output-directory=./tex --shell-escape " +
-              tex_file_name)
-    os.system("pdflatex -output-directory=./tex --shell-escape " +
-              tex_file_name)
+    compile(tex_file_name)
+    compile(tex_file_name)
 
 
 def once(tex_file_name):
-    os.system("pdflatex -output-directory=./tex --shell-escape " +
-              tex_file_name)
+    compile(tex_file_name)
 
 
 def main():
