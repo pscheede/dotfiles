@@ -103,7 +103,8 @@ augroup filetype_python
     " Needed to fit the allmighty PEP8
     " autocmd FileType python setlocal textwidth=79
     " Folding in python files
-    autocmd FileType python setlocal foldmethod=indent foldlevel=20
+    autocmd FileType python setlocal foldmethod=indent foldlevel=20 foldignore=
+    autocmd FileType python nnoremap <buffer> <localleader>m :wa<cr>:!clear && pytest<cr>
 augroup END
 
 augroup filetype_vim
@@ -242,15 +243,14 @@ let g:ale_linters = {
             \],
             \}
 
-let g:ale_python_mypy_options = '--ignore-missing-imports'
-let g:ale_python_mypy_ignore_invalid_syntax = 0
+let g:ale_python_flake8_options = '--max-line-length 88'
 
 let g:ale_java_google_java_format_options = '-a'
 let g:ale_c_clangformat_options = '--style=Google'
 
 let g:ale_fixers = {
             \'python': [
-            \   'yapf',
+            \   'black',
             \   'isort',
             \],
             \'java': [
@@ -294,6 +294,9 @@ nmap <leader>o :CtrlP<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
+
+" Clear cache in order to recognize new files
+nmap <leader>ro :CtrlPClearCache<cr>
 
 """ Buffergator
 
